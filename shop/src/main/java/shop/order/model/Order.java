@@ -1,7 +1,7 @@
 package shop.order.model;
-import shop.user.model.CreditCard;
-import shop.user.model.Customer;
-import shop.user.model.Address;
+import shop.customer.model.CreditCard;
+import shop.customer.model.Customer;
+import shop.customer.model.Address;
 
 
 import javax.persistence.*;

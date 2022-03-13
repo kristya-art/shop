@@ -6,7 +6,7 @@ import shop.order.model.Order;
 import shop.order.model.OrderItem;
 import shop.order.service.OrderNotFoundException;
 import shop.order.service.OrderService;
-import shop.user.model.Customer;
+import shop.customer.model.Customer;
 
 import java.util.List;
 

@@ -1,24 +1,21 @@
 package shop;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 import shop.order.model.BookInfo;
 import shop.order.model.Order;
 import shop.order.model.OrderItem;
-import shop.order.model.OrderStatus;
 import shop.order.repository.OrderRepository;
 import shop.order.service.OrderService;
-import shop.user.model.Address;
-import shop.user.model.CreditCard;
-import shop.user.model.CreditCardType;
-import shop.user.model.Customer;
-import shop.user.repository.CustomerRepository;
+import shop.customer.model.Address;
+import shop.customer.model.CreditCard;
+import shop.customer.model.CreditCardType;
+import shop.customer.model.Customer;
+import shop.customer.repository.CustomerRepository;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Component
@@ -48,7 +45,7 @@ public class DataLoader implements ApplicationRunner {
         OrderItem orderItem = new OrderItem(book,1);
         OrderItem orderItem2 = new OrderItem(book2,3);
 
-        Customer customer1 = new Customer("Alic", "Boldwin","alic@gmx.com","alicb^^^^",new CreditCard(CreditCardType.VISA,"1234",06,2023),new Address());
+        Customer customer1 = new Customer("Alic", "Bon","alic@gmx.com","alicb^^^^",new CreditCard(CreditCardType.VISA,"1234",06,2023),new Address());
 //        Customer Customer3 = new Customer("Make", "make@gmx.com");
 //        Customer Customer2 = new Customer("Karol", "karol@gmx.com");
 
@@ -59,10 +56,10 @@ public class DataLoader implements ApplicationRunner {
         List<OrderItem> orderItems = new ArrayList<>();
         orderItems.add(orderItem);
         orderItems.add(orderItem2);
-        // Order newOrder = orderService.createOrder(Customer1,orderItems);
+        Order newOrder = orderService.createOrder(customer1,orderItems);
 
-        Order order = new Order(orderItems,OrderStatus.ACCEPTED,new BigDecimal(89.0),new Date(),customer1);
-        customerRepository.save(customer1);
-        orderRepository.save(order);
+//        Order order = new Order(orderItems,OrderStatus.ACCEPTED,new BigDecimal(89.0),new Date(),customer1);
+//        customerRepository.save(customer1);
+//        orderRepository.save(order);
     }
 }

@@ -1,8 +1,8 @@
-package shop.user.controller;
+package shop.customer.controller;
 
 import org.springframework.web.bind.annotation.*;
-import shop.user.model.Customer;
-import shop.user.repository.CustomerRepository;
+import shop.customer.model.Customer;
+import shop.customer.repository.CustomerRepository;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package shop.user.model;
+package shop.customer.model;
 
 import javax.persistence.Embeddable;
 
